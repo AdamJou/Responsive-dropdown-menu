@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    background: rgb(16, 13, 31);
+    font-size: 22px;
+    line-height: 32px;
+    word-wrap: break-word !important;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.toggle,
+[id^="drop"] {
+    display: none;
+}
+
+#logo {
+    display: block;
+    float: left;
+    font-size: 26px;
+    line-height: 60px;
+    padding: 0 30px;
+}
+
+nav {
+    display: flex;
+    background-color: rgb(120, 110, 182);
+    justify-content: space-evenly;
+}
+
+#main-toggle {
+    cursor: pointer;
+    float: right;
+    padding: 30px 30px;
+    position: relative;
+    user-select: none;
+}
+
+nav a {
+    text-transform: uppercase;
+    font-weight: 300;
+}
+.nav-icon {
+    display: block;
+    width: 18px;
+    height: 2px;
+    position: relative;
+    background: darkslateblue;
+}
+
+.nav-icon:before,
+.nav-icon:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: darkslateblue;
+    display: block;
+    position: absolute;
+}
+
+.nav-icon:after {
+    top: 5px;
+}
+.nav-icon::before {
+    top: -5px;
+}
+nav::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+nav ul {
+    float: right;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav ul li {
+    float: left;
+    margin: 0;
+    background-color: rgb(120, 110, 182);
+}
+
+nav a {
+    display: block;
+    padding: 0 20px;
+    font-size: 20px;
+    line-height: 60px;
+}
+
+nav ul ul li > a {
+    color: rgb(184, 184, 184);
+}
+
+ul.menu > li:hover > a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+nav ul li ul li:hover {
+    background: rgb(50, 44, 94);
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+}
+
+nav ul ul li {
+    display: list-item;
+    float: none;
+    width: 170px;
+    position: relative;
+}
+
+nav ul ul ul li {
+    position: relative;
+    top: -60px;
+    left: 170px;
+}
+
+nav ul li:hover > ul {
+    display: inherit;
+}
+
+li a::after {
+    content: " >";
+}
+
+li a:only-child::after {
+    content: "";
+}
+
+@media all and (max-width: 768px) {
+    nav {
+        margin: 0;
+    }
+    nav ul {
+        float: none;
+    }
+    .toggle + a,
+    .menu {
+        display: none;
+    }
+
+    .toggle {
+        display: block;
+        padding: 0 20px;
+        color: white;
+        font-size: 20px;
+        line-height: 60px;
+        text-decoration: none;
+    }
+
+    [id^="drop"]:checked + ul {
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        width: 100%;
+    }
+    nav ul ul .toggle,
+    nav ul ul a {
+        padding: 0 40px;
+    }
+    nav ul ul ul a {
+        padding: 0 80px;
+        background-color: rgb(27, 23, 58);
+    }
+
+    nav ul li ul li .toggle,
+    nav ul ul a {
+        background-color: rgb(80, 72, 133);
+    }
+    nav ul ul {
+        float: none;
+        position: static;
+        color: white;
+    }
+
+    nav ul ul li:hover > ul,
+    nav ul li:hover > ul {
+        display: none;
+    }
+    nav ul ul li {
+        display: block;
+        width: 100%;
+    }
+
+    nav ul ul ul li {
+        position: static;
+    }
+
+    nav {
+        display: block;
+        width: 100%;
+    }
+}
